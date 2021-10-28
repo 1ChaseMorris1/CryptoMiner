@@ -98,7 +98,7 @@ public class FillShop : MonoBehaviour
             for (int j = 0; j < GameDriver.getItemSize(i); j++)
             {
                 if (x == iterator1) {
-                    makeInfoCard(x, i);
+                    makeInfoCard(x);
                     setInfoCardAssets(currentIterator, i);
                     found = true;
                     break;
@@ -113,7 +113,7 @@ public class FillShop : MonoBehaviour
 
     }
 
-    private void makeInfoCard(int x, int currentClass)
+    private void makeInfoCard(int x)
     {
         info = Instantiate(infoCardPrefab);
 
@@ -144,46 +144,38 @@ public class FillShop : MonoBehaviour
         switch (currentClass)
         {
             case 0:
-                editText(GameDriver.cards[itemNum].getInfoCardFormat(), GameDriver.cards[itemNum].getInfoCardFormat().Length,
-                    GameDriver.cards[itemNum].getBreakSize(), textUi);
+                editText(GameDriver.cards[itemNum].getInfoCardFormat(), GameDriver.cards[itemNum].getBreakSize(), textUi);
                 break;
             case 1:
-                editText(GameDriver.fans[itemNum].getInfoCardFormat(), GameDriver.fans[itemNum].getInfoCardFormat().Length,
-                    GameDriver.fans[itemNum].getBreakSize(), textUi);
+                editText(GameDriver.fans[itemNum].getInfoCardFormat(), GameDriver.fans[itemNum].getBreakSize(), textUi);
                 break;
             case 2:
-                editText(GameDriver.psus[itemNum].getInfoCardFormat(), GameDriver.psus[itemNum].getInfoCardFormat().Length,
-                    GameDriver.psus[itemNum].getBreakSize(), textUi);
+                editText(GameDriver.psus[itemNum].getInfoCardFormat(), GameDriver.psus[itemNum].getBreakSize(), textUi);
                 break;
             case 3:
-                editText(GameDriver.cpus[itemNum].getInfoCardFormat(), GameDriver.cpus[itemNum].getInfoCardFormat().Length,
-                    GameDriver.cpus[itemNum].getBreakSize(), textUi);
+                editText(GameDriver.cpus[itemNum].getInfoCardFormat(), GameDriver.cpus[itemNum].getBreakSize(), textUi);
                 break;
             case 4:
-                editText(GameDriver.ants[itemNum].getInfoCardFormat(), GameDriver.ants[itemNum].getInfoCardFormat().Length,
-                    GameDriver.ants[itemNum].getBreakSize(), textUi);
+                editText(GameDriver.ants[itemNum].getInfoCardFormat(), GameDriver.ants[itemNum].getBreakSize(), textUi);
                 break;
             case 5:
-                editText(GameDriver.rigs[itemNum].getInfoCardFormat(), GameDriver.rigs[itemNum].getInfoCardFormat().Length,
-                    GameDriver.rigs[itemNum].getBreakSize(), textUi);
+                editText(GameDriver.rigs[itemNum].getInfoCardFormat(), GameDriver.rigs[itemNum].getBreakSize(), textUi);
                 break;
             case 6:
-                editText(GameDriver.mods[itemNum].getInfoCardFormat(), GameDriver.mods[itemNum].getInfoCardFormat().Length,
-                    GameDriver.mods[itemNum].getBreakSize(), textUi);
+                editText(GameDriver.mods[itemNum].getInfoCardFormat(), GameDriver.mods[itemNum].getBreakSize(), textUi);
                 break;
             case 7:
-                editText(GameDriver.electric[itemNum].getInfoCardFormat(), GameDriver.electric[itemNum].getInfoCardFormat().Length,
-                    GameDriver.electric[itemNum].getBreakSize(), textUi);
+                editText(GameDriver.electric[itemNum].getInfoCardFormat(), GameDriver.electric[itemNum].getBreakSize(), textUi);
                 break;
 
         }
     }
 
-    private void editText(string[] text, int iterator, int breakLine, List<TextMeshProUGUI> textUi)
+    private void editText(string[] text, int breakLine, List<TextMeshProUGUI> textUi)
     {
         int j = 0;
 
-        for (int i = 0; i < iterator; i++)
+        for (int i = 0; i < text.Length; i++)
         {
             textUi.Add(Instantiate(infoTextPrefab));
 

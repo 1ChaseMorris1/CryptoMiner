@@ -87,8 +87,6 @@ public class FilterShop : MonoBehaviour
 
         string text = searchText.GetComponent<TextMeshProUGUI>().text;
 
-        int iter = 0;
-
         int iterator = 0;
 
         bool found = false;
@@ -97,13 +95,14 @@ public class FilterShop : MonoBehaviour
         {
             if (x.activeSelf)
             {
-                searchNames.Add(GameDriver.names[iter]);
-                instantiateNumber.Add(iter); 
+                searchNames.Add(GameDriver.names[iterator]);
+                instantiateNumber.Add(iterator); 
             }
 
-            iter++;
+            iterator++;
         }
 
+        iterator = 0;
         
         if (text == "\u200B")
         {
@@ -118,7 +117,7 @@ public class FilterShop : MonoBehaviour
             return;
         }
         
-        text = text.TrimEnd('\u200B');                 // weird ass dude
+        text = text.TrimEnd('\u200B');                 // weird ass dude go away 
 
         foreach(string x in searchNames)
         {
