@@ -56,8 +56,7 @@ public class FillShop : MonoBehaviour
         infoTextPrefab = GameObject.Find("InfoText").GetComponent<TextMeshProUGUI>();
 
         grey = GameObject.Find("Grey");
-        background = GameObject.Find("Background").GetComponent<Animator>(); 
-
+        background = GameObject.Find("Background").GetComponent<Animator>();
 
         grey.SetActive(false);
 
@@ -199,6 +198,12 @@ public class FillShop : MonoBehaviour
         }
 
         textUi.Clear();
+    }
+
+    public void turnOnCards()
+    {
+        for (int i = 0; i < ShopDriver.itemCards.Count; i++)
+            ShopDriver.itemCards[i].SetActive(true);
     }
 
 }

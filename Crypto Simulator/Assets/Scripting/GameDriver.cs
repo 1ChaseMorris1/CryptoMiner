@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI; 
 
 public class GameDriver : MonoBehaviour
 {
 
-    public void changeScene() { SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); }
+    public void changeScene() { SceneManager.LoadScene("Shop"); }
+
+    public void mapScene() { SceneManager.LoadScene("Map"); }
 
     /*
      * this script is called first, this is the loading screen script, it will 
@@ -29,8 +32,12 @@ public class GameDriver : MonoBehaviour
     public static List<float> costs = new List<float>();
     public static List<Sprite> images = new List<Sprite>();
 
+    public static float playerMoney; 
+
     private void Start()
     {
+        playerMoney = 0f;
+
         setAllItems();
     }
 

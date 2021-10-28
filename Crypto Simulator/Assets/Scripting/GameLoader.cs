@@ -13,7 +13,7 @@ using UnityEngine.SceneManagement;
 public class GameLoader : MonoBehaviour
 {
 
-    public void changeScreen() { SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); }
+    public void changeScreen() { SceneManager.LoadScene("Columbus"); }
 
     private string[] items = System.IO.File.ReadAllLines("Assets/textAssets/items.txt");
 
@@ -28,12 +28,24 @@ public class GameLoader : MonoBehaviour
 
     private void Start()
     {
+        setMapVariables(); 
+
         x = 0;
         arraySize = 0;
         imageIterator = 0;
+
         loadItems();
     }
     
+    private void setMapVariables()
+    {
+        for (int i = 0; i < 5; i++)
+            MapsDriver.mapUnlocks.Add(false);
+
+        // TODO
+        // load in the actual values with another loop.
+    }
+
     private void loadItems()        // loads all of the items
     {
         readCards();
@@ -232,4 +244,5 @@ public class GameLoader : MonoBehaviour
         arraySize = 0;
         x++;
     }
+
 }

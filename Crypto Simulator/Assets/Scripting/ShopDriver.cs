@@ -8,13 +8,10 @@ using UnityEngine.UI;
 public class ShopDriver : MonoBehaviour
 {
     // user money should be set independently and not in the isLoaded condition.
-    public void backOne() { SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1); }     // temporary
 
     private FillShop fillShop;                                             // is used to fill the shop up when needed.
 
-    private FilterShop filterShop;                                          // is used to filter the shop.
-
-    public bool isLoaded = false;                                          // if it is true then fill shop will not be called on start. 
+    private FilterShop filterShop;                                          // is used to filter the shop. 
 
     private float cartMoney;                                               // money in cart 
 
@@ -29,6 +26,7 @@ public class ShopDriver : MonoBehaviour
 
     private void Start()
     {
+
         cartMoney = 0;
 
         cartAmount = 0;
@@ -131,5 +129,20 @@ public class ShopDriver : MonoBehaviour
         }
 
     }
+
+    public void backOne()
+    {
+        if(cartCards.Count > 0)
+        {
+            // show warning
+        }
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+
+        itemCards.Clear();
+
+        cartCards.Clear(); 
+
+    }     // temporary
 
 }

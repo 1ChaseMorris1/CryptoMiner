@@ -48,8 +48,9 @@ public class FilterShop : MonoBehaviour
         if (x == 0) { noResults.SetActive(true); }
         else { noResults.SetActive(false); }
 
+        // this checks the search after enabling the correct filters
         if(searchText.GetComponent<TextMeshProUGUI>().text != "\u200B")
-        search();
+        search(0);
 
     }
 
@@ -73,18 +74,13 @@ public class FilterShop : MonoBehaviour
         else return 0;
     }
 
+
     public void setSearchButton()
     {
-        searchButton.GetComponent<Button>().onClick.AddListener(() => search()); 
+        searchButton.GetComponent<Button>().onClick.AddListener(() => search(1)); 
     }
 
-    // two different searches 
-    // search null and search something 
-    // this will allow the shop to update when a filter is pressed and not cause 
-    // recursion when nothing is pressed as when the shop is reset, the text is null 
-    // and it should only call the shop function if the next is not null.
-
-    private void search()
+    private void search(int shouldCall)
     {
         List<string> searchNames = new List<string>();
         List<int> instantiateNumber = new List<int>(); 
@@ -93,7 +89,11 @@ public class FilterShop : MonoBehaviour
 
         int iter = 0;
 
-        foreach(GameObject x in ShopDriver.itemCards)
+        int iterator = 0;
+
+        bool found = false;
+
+        foreach (GameObject x in ShopDriver.itemCards)
         {
             if (x.activeSelf)
             {
@@ -104,25 +104,21 @@ public class FilterShop : MonoBehaviour
             iter++;
         }
 
-        /*
+        
         if (text == "\u200B")
         {
             for (int i = 0; i < ShopDriver.itemCards.Count; i++)
                 ShopDriver.itemCards[i].SetActive(true);
 
+            if(shouldCall != 0)
             filterToggles(ShopDriver.itemCards);
 
             noResults.SetActive(false);
 
             return;
         }
-        */
-
+        
         text = text.TrimEnd('\u200B');                 // weird ass dude
-
-        int iterator = 0;
-
-        bool found = false;
 
         foreach(string x in searchNames)
         {
@@ -153,7 +149,6 @@ public class FilterShop : MonoBehaviour
 
             foreach (string x in searchNames)
             {
-                print(x);
 
                 string[] names = x.Split(' ');
 
