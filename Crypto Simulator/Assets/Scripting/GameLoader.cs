@@ -35,12 +35,14 @@ public class GameLoader : MonoBehaviour
         imageIterator = 0;
 
         loadItems();
+
+        SaveInfo.loadPlayer();
     }
     
     private void setMapVariables()
     {
-        for (int i = 0; i < 5; i++)
-            MapsDriver.mapUnlocks.Add(false);
+   //     for (int i = 0; i < 5; i++)
+    //        MapsDriver.mapUnlocks.Add(false);
 
         // TODO
         // load in the actual values with another loop.
