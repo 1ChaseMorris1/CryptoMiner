@@ -6,6 +6,8 @@ using UnityEngine.UI;
 // works amazing
 public class FillShop : MonoBehaviour
 {
+    public GameObject cartError;                                // is the cart error
+    public GameObject exitError;                                // is the exit error
 
     private GameObject itemCardPanel;                          // is the parent panel for the item card prefab.
     private GameObject infoCardPanel;                          // is the parent panel for the info card prefab. 
@@ -45,6 +47,7 @@ public class FillShop : MonoBehaviour
 
     public void fillGameObjects()
     {
+
         itemCardPanel = GameObject.Find("ItemPanel");
         infoCardPanel = GameObject.Find("Info");
         cartCardPanel = GameObject.Find("CartPanel");
@@ -60,6 +63,15 @@ public class FillShop : MonoBehaviour
 
         grey.SetActive(false);
 
+        exitError = GameObject.Find("ExitError");
+
+        exitError.SetActive(false);
+
+        cartError = GameObject.Find("CartError");
+
+        cartError.SetActive(false);
+
+        setErrors();
     }
 
     public void fillItems(List<GameObject> itemCards)
@@ -197,5 +209,13 @@ public class FillShop : MonoBehaviour
         for (int i = 0; i < ShopDriver.itemCards.Count; i++)
             ShopDriver.itemCards[i].SetActive(true);
     }
+
+    public void setErrors()
+    {
+
+        exitError.transform.GetChild(2).GetComponent<Button>().onClick.AddListener(() => exitError.SetActive(false));
+
+        cartError.transform.GetChild(2).GetComponent<Button>().onClick.AddListener(() => cartError.SetActive(false));
+    } 
 
 }

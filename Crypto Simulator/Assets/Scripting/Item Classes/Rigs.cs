@@ -8,8 +8,19 @@ public class Rigs : Items
     private int inch;
     private int capacity;
     private int ANTS;
-    private int fans; 
+    private int fans;
+    private char size; 
     // tiles should be added in soon....
+
+    public void setSize(char x)
+    {
+        size = x;
+    }
+
+    public char getSize()
+    {
+        return size; 
+    }
 
     public   void setInch(int x)
     {

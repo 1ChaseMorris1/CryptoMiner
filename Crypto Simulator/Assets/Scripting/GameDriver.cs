@@ -26,11 +26,12 @@ public class GameDriver : MonoBehaviour
     public static List<ANTS> ants = new List<ANTS>();
     public static List<Rigs> rigs = new List<Rigs>();
     public static List<Mods> mods = new List<Mods>();
-    public static List<Electric> electric = new List<Electric>();
+    public static List<Electric> electric = new List<Electric>();    
 
     public static List<string> names = new List<string>();
     public static List<float> costs = new List<float>();
     public static List<Sprite> images = new List<Sprite>();
+    public static List<int> corresponding = new List<int>();
 
     public static float playerMoney; 
 
@@ -39,6 +40,7 @@ public class GameDriver : MonoBehaviour
         playerMoney = 0f;
 
         setAllItems();
+
     }
 
     public static int getItemAmount()
@@ -76,12 +78,14 @@ public class GameDriver : MonoBehaviour
             names.Add(cards[i].getName());
             costs.Add(cards[i].getCost());
             images.Add(cards[i].getSprite());
+            corresponding.Add(i);
         }
         for (int i = 0; i < fans.Count; i++)
         {
             names.Add(fans[i].getName());
             costs.Add(fans[i].getCost());
             images.Add(fans[i].getSprite());
+            corresponding.Add(i);
         }
 
         for (int i = 0; i < psus.Count; i++)
@@ -89,6 +93,7 @@ public class GameDriver : MonoBehaviour
             names.Add(psus[i].getName());
             costs.Add(psus[i].getCost());
             images.Add(psus[i].getSprite());
+            corresponding.Add(i);
         }
 
         for (int i = 0; i < cpus.Count; i++)
@@ -96,6 +101,7 @@ public class GameDriver : MonoBehaviour
             names.Add(cpus[i].getName());
             costs.Add(cpus[i].getCost());
             images.Add(cpus[i].getSprite());
+            corresponding.Add(i);
         }
 
         for (int i = 0; i < ants.Count; i++)
@@ -103,6 +109,7 @@ public class GameDriver : MonoBehaviour
             names.Add(ants[i].getName());
             costs.Add(ants[i].getCost());
             images.Add(ants[i].getSprite());
+            corresponding.Add(i);
         }
 
         for (int i = 0; i < rigs.Count; i++)
@@ -110,6 +117,7 @@ public class GameDriver : MonoBehaviour
             names.Add(rigs[i].getName());
             costs.Add(rigs[i].getCost());
             images.Add(rigs[i].getSprite());
+            corresponding.Add(i);
         }
 
         for (int i = 0; i < mods.Count; i++)
@@ -117,6 +125,7 @@ public class GameDriver : MonoBehaviour
             names.Add(mods[i].getName());
             costs.Add(mods[i].getCost());
             images.Add(mods[i].getSprite());
+            corresponding.Add(i);
         }
 
         for (int i = 0; i < electric.Count; i++)
@@ -124,6 +133,7 @@ public class GameDriver : MonoBehaviour
             names.Add(electric[i].getName());
             costs.Add(electric[i].getCost());
             images.Add(electric[i].getSprite());
+            corresponding.Add(i);
         }
 
     }

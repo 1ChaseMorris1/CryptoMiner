@@ -3,6 +3,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+/* 
+ * after searching once and then trying to search again, shop search quits working
+ */
+
 public class FilterShop : MonoBehaviour
 {
     // fix this bullshit

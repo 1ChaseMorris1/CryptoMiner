@@ -214,54 +214,63 @@ Extent H9L
 12
 2
 6
+S
 Extent H10L
 1200.00	
 12	
 6	
 4	
 6
+S
 ExtentH14L
 2000.00
 6	
 24	
 4	
 12
+S
 Extent LJ1
 2400.00
 12	
 12	
 6	
 12
+M
 ExtentLJ2	
 4000.00	
 6	
 48	
 8	
 24
+M
 ExtentLJ3
 4500.00
 12	
 24	
 10	
 24
+M
 Scope ANT
 6000.00
 6	
 120	
 16	
 48
+L
 Scope ANT J1
 8000.00
 12
 96
 24
 48
+L
 LG AAN	
 10000.00
 12
 120
 32
 50
+L
 #
 Lightning Case 6	
 2	

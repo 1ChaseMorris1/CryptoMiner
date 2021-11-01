@@ -15,6 +15,7 @@ TagManager:
   - CartMoney
   - searchButton
   - searchBar
+  - cartError
   layers:
   - Default
   - TransparentFX

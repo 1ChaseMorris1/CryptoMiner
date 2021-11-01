@@ -36,6 +36,10 @@ public class GameLoader : MonoBehaviour
 
         loadItems();
 
+     //   Player.inventory.playerCards = new List<Cards>();
+
+
+
         SaveInfo.loadPlayer();
     }
     
@@ -119,6 +123,7 @@ public class GameLoader : MonoBehaviour
             GameDriver.rigs[arraySize].setCapacity(int.Parse(items[x])); x++;
             GameDriver.rigs[arraySize].setANTS(int.Parse(items[x])); x++;
             GameDriver.rigs[arraySize].setFans(int.Parse(items[x])); x++;
+            GameDriver.rigs[arraySize].setSize(char.Parse(items[x])); x++;
             GameDriver.rigs[arraySize].setSprite(image[imageIterator]);
 
             imageIterator++;

@@ -14,7 +14,7 @@ public class SaveInfo : MonoBehaviour
 
         BinaryFormatter formatter = new BinaryFormatter();
 
-        string path = Application.persistentDataPath + "/2.Keokee";
+        string path = Application.persistentDataPath + "/4.Keokee";
 
         FileStream stream = new FileStream(path, FileMode.Create);
 
@@ -27,7 +27,7 @@ public class SaveInfo : MonoBehaviour
 
     public static void loadPlayer()
     {
-        string path = Application.persistentDataPath + "/2.Keokee";
+        string path = Application.persistentDataPath + "/4.Keokee";
 
         if (File.Exists(path))
         {
